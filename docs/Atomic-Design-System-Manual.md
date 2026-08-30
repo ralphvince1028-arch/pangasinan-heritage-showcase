@@ -163,6 +163,23 @@ export interface TypographyProps {
   className?: string;
   id?: string;
 }
+
+export const Typography: React.FC<TypographyProps> = ({
+  variant = 'body',
+  as,
+  color = 'default',
+  align = 'left',
+  children,
+  className = '',
+  id,
+}) => {
+  const Component = as || defaultElementMap[variant] || 'p';
+  return (
+    <Component className={`${styles[variant]} ${styles[color]} ${className}`} id={id}>
+      {children}
+    </Component>
+  );
+};
 ```
 
 ---
@@ -190,6 +207,64 @@ export interface TypographyProps {
 - Supports `fullWidth={true}` for mobile drawers and form submissions.
 - Focus-visible ring renders a 3px high-visibility electric blue outline (`--color-focus`).
 
+#### 4. Code Reference
+```tsx
+// components/atoms/Button/Button.tsx
+import React from 'react';
+import Link from 'next/link';
+import styles from './Button.module.css';
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  fullWidth?: boolean;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  size = 'md',
+  href,
+  fullWidth = false,
+  iconLeft,
+  iconRight,
+  children,
+  className = '',
+  disabled,
+  ...restProps
+}) => {
+  const combinedClasses = [
+    styles.button,
+    styles[variant],
+    styles[size],
+    fullWidth ? styles.fullWidth : '',
+    className,
+  ].filter(Boolean).join(' ');
+
+  const content = (
+    <>
+      {iconLeft && <span className={styles.icon}>{iconLeft}</span>}
+      <span>{children}</span>
+      {iconRight && <span className={styles.icon}>{iconRight}</span>}
+    </>
+  );
+
+  if (href && !disabled) {
+    return <Link href={href} className={combinedClasses} role="button">{content}</Link>;
+  }
+
+  return (
+    <button type="button" className={combinedClasses} disabled={disabled} aria-disabled={disabled} {...restProps}>
+      {content}
+    </button>
+  );
+};
+```
+
 ---
 
 ### 3.4 Icon Atom
@@ -210,6 +285,29 @@ export interface TypographyProps {
 - **Where Used**: Search inputs, location badges, card action buttons, and mobile menus.
 - **When to Use**: Whenever a visual icon glyph is required alongside text.
 
+#### 3. Responsive Logic
+- Inherits `currentColor` or uses explicit design tokens.
+- Supports standardized pixel scales: `xs` (14px), `sm` (18px), `md` (24px), `lg` (32px).
+- Sets `aria-hidden="true"` by default to prevent screen reader clutter, or accepts `ariaLabel`.
+
+#### 4. Code Reference
+```tsx
+// components/atoms/Icon/Icon.tsx
+import React from 'react';
+import styles from './Icon.module.css';
+
+export type IconName = 'search' | 'map-pin' | 'arrow-right' | 'arrow-left' | 'menu' | 'close' | 'compass' | 'sun' | 'water' | 'landmark' | 'tag' | 'calendar' | 'shield' | 'sparkles' | 'external-link' | 'check' | 'chevron-down' | 'clear' | 'info';
+
+export interface IconProps {
+  name: IconName;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | number;
+  color?: string;
+  className?: string;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
+}
+```
+
 ---
 
 ### 3.5 ResponsiveImage Atom
@@ -229,6 +327,29 @@ export interface TypographyProps {
 - **Purpose**: Wraps `next/image` with predefined aspect ratios, layout bounding boxes, and lazy loading.
 - **Where Used**: Hero banners, Heritage Cards, and Destination Detail galleries.
 - **When to Use**: Every image rendering in the application. Eliminates Cumulative Layout Shift (CLS).
+
+#### 3. Responsive Logic
+- Implements CSS `aspect-ratio: 16 / 9`, `4 / 3`, or `1 / 1`.
+- Configures responsive `sizes` attribute (`(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw`).
+- Uses `priority={true}` only for hero banners (LCP images); defaults to `loading="lazy"`.
+
+#### 4. Code Reference
+```tsx
+// components/atoms/ResponsiveImage/ResponsiveImage.tsx
+import React from 'react';
+import Image, { ImageProps } from 'next/image';
+import styles from './ResponsiveImage.module.css';
+
+export interface ResponsiveImageProps extends Omit<ImageProps, 'alt'> {
+  src: string;
+  alt: string;
+  aspectRatio?: '16/9' | '4/3' | '1/1' | '21/9' | 'auto';
+  radius?: 'none' | 'sm' | 'md' | 'lg' | 'full';
+  caption?: string;
+  zoomOnHover?: boolean;
+  className?: string;
+}
+```
 
 ---
 
@@ -252,6 +373,60 @@ export interface TypographyProps {
 - **Where Used**: Home Page Featured section, Heritage Catalog grid, and search result views.
 - **When to Use**: Used to display any heritage destination in a card format.
 
+#### 3. Responsive Logic
+- Enclosed in semantic `<article>` container.
+- Flexbox column layout with `height: 100%` and `margin-top: auto` on the footer ensures uniform card heights across grid rows.
+- Interactive hover state applies a subtle lift (`transform: translateY(-4px)`) and shadow elevation (`--shadow-card-hover`).
+
+#### 4. Code Reference
+```tsx
+// components/molecules/HeritageCard/HeritageCard.tsx
+import React from 'react';
+import Link from 'next/link';
+import { Destination } from '@/types/heritage';
+import { ResponsiveImage } from '@/components/atoms/ResponsiveImage';
+import { Typography } from '@/components/atoms/Typography';
+import { Icon } from '@/components/atoms/Icon';
+import { Button } from '@/components/atoms/Button';
+import styles from './HeritageCard.module.css';
+
+export interface HeritageCardProps {
+  destination: Destination;
+  className?: string;
+  priority?: boolean;
+}
+
+export const HeritageCard: React.FC<HeritageCardProps> = ({ destination, className = '', priority = false }) => {
+  const { slug, name, municipality, province, category, description, imageUrl, imageAlt, featured } = destination;
+  return (
+    <article className={`${styles.card} ${className}`}>
+      <div className={styles.imageContainer}>
+        {featured && <span className={styles.featuredBadge}>Featured</span>}
+        <Link href={`/heritage/${slug}`} aria-label={`View details of ${name}`}>
+          <ResponsiveImage src={imageUrl} alt={imageAlt} aspectRatio="16/9" priority={priority} zoomOnHover />
+        </Link>
+      </div>
+      <div className={styles.content}>
+        <Typography variant="tag">{category}</Typography>
+        <Link href={`/heritage/${slug}`}>
+          <Typography variant="h3" as="h3" className={styles.title}>{name}</Typography>
+        </Link>
+        <div className={styles.location}>
+          <Icon name="map-pin" size="xs" color="var(--color-secondary)" ariaHidden />
+          <Typography variant="small" color="muted">{municipality}, {province}</Typography>
+        </div>
+        <p className={styles.description}>{description}</p>
+        <div className={styles.footer}>
+          <Button variant="outline" size="sm" href={`/heritage/${slug}`} fullWidth iconRight={<Icon name="arrow-right" size="xs" ariaHidden />}>
+            Explore Destination
+          </Button>
+        </div>
+      </div>
+    </article>
+  );
+};
+```
+
 ---
 
 ### 4.2 SearchForm Molecule
@@ -272,6 +447,32 @@ export interface TypographyProps {
 - **Where Used**: Heritage Catalog page (`/heritage`) and Design System showcase.
 - **When to Use**: Whenever users need to search destinations by keyword or filter by heritage category.
 
+#### 3. Responsive Logic
+- Form container adapts with full width.
+- Category pills wrap flexibly (`flex-wrap: wrap`) on mobile screens without horizontal overflow.
+- Accessible form landmark (`<form role="search">`) with live polite status announcements (`aria-live="polite"`).
+
+#### 4. Code Reference
+```tsx
+// components/molecules/SearchForm/SearchForm.tsx
+'use client';
+import React from 'react';
+import { Icon } from '@/components/atoms/Icon';
+import styles from './SearchForm.module.css';
+
+export interface SearchFormProps {
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+  categories: string[];
+  resultCount: number;
+  totalCount: number;
+  onReset?: () => void;
+  className?: string;
+}
+```
+
 ---
 
 ### 4.3 NavigationItem Molecule
@@ -291,6 +492,11 @@ export interface TypographyProps {
 - **Composition**: Combines `next/link`, `Icon` (optional), and active indicator styling.
 - **Where Used**: Header navigation bar and mobile drawer menu.
 - **When to Use**: For all header and drawer navigation links.
+
+#### 3. Responsive Logic
+- Renders an active underline on desktop and a highlighted background on mobile viewports.
+- Uses `aria-current="page"` when the current route matches `href`.
+- Ensures touch target height of at least 44px.
 
 ---
 
@@ -314,6 +520,31 @@ export interface TypographyProps {
 - **Where Used**: Heritage Catalog (`/heritage`) and Home Page featured showcase.
 - **When to Use**: For rendering responsive collections of destination cards with live filtering.
 
+#### 3. Responsive Logic (CSS Grid)
+```css
+/* components/organisms/HeritageGrid/HeritageGrid.module.css */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile default: 1 column (<640px) */
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns (640px-1023px) */
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns (>=1024px) */
+    gap: var(--space-xl);
+  }
+}
+```
+
 ---
 
 ### 5.2 HeaderNavigation Organism
@@ -336,6 +567,11 @@ export interface TypographyProps {
 - **Composition**: Combines Brand logo, Typography, `NavigationItem` molecules, `Button` atom, and `Icon` hamburger toggle.
 - **Where Used**: Mounted globally inside `app/layout.tsx`.
 - **When to Use**: Persistent site header across all routes.
+
+#### 3. Responsive Logic
+- Sticky positioning (`position: sticky; top: 0`) with subtle backdrop blur.
+- On desktop ($\ge 840\text{px}$): Displays inline horizontal links and CTA button.
+- On mobile ($< 840\text{px}$): Hides horizontal links and displays accessible 44px hamburger button. Opening the menu triggers a smooth slide-down drawer with ESC key and route change auto-close.
 
 ---
 
