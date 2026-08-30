@@ -1,0 +1,222 @@
+/* ==========================================================================
+   PANGASINAN HERITAGE DIGITAL SHOWCASE - DESIGN TOKENS & GLOBAL STYLES
+   Design Philosophy: Modern Philippine Cultural Editorial (Clean, Minimal, Image-Driven)
+   Accessibility: WCAG 2.1 AA Compliant (High Contrast, Visible Focus, Reduced Motion)
+   ========================================================================== */
+
+:root {
+  /* --- 1. COLOR TOKENS --- */
+  /* Primary Coastal Blue Palette (Pangasinan Lingayen Gulf) */
+  --color-primary: #0F4C81;
+  --color-primary-hover: #0C3E69;
+  --color-primary-dark: #082946;
+  --color-primary-light: #EBF3FA;
+
+  /* Secondary & Accent Palette (Warm Lingayen Sun & Fine Sand) */
+  --color-secondary: #D97706;
+  --color-secondary-hover: #B45309;
+  --color-secondary-light: #FEF3C7;
+  --color-accent: #0284C7;
+
+  /* Ecological Emerald Palette (Mangroves & Natural Parks) */
+  --color-emerald: #15803D;
+  --color-emerald-light: #DCFCE7;
+
+  /* Neutral Backgrounds & Canvas */
+  --color-background: #FAF9F6;       /* Warm editorial off-white */
+  --color-surface: #FFFFFF;          /* Pure white card surface */
+  --color-surface-subtle: #F5F4F0;   /* Light stone surface */
+  --color-surface-hover: #F0EFE9;
+
+  /* Text & Typography Contrast */
+  --color-text: #1C1917;             /* High contrast deep charcoal (WCAG AAA) */
+  --color-text-muted: #57534E;       /* Slate stone for secondary details (4.5:1+) */
+  --color-text-inverse: #FFFFFF;     /* Pure white for dark backgrounds */
+  --color-text-brand: #0F4C81;
+
+  /* Structural Borders & Dividers */
+  --color-border: #E7E5E4;           /* Crisp subtle stone border */
+  --color-border-subtle: #F0EFE9;
+  --color-border-focus: #0284C7;
+
+  /* Accessibility Focus Token (Electric Azure) */
+  --color-focus: #0284C7;
+  --focus-ring: 0 0 0 3px rgba(2, 132, 199, 0.4), 0 0 0 1px #0284C7;
+
+  /* --- 2. TYPOGRAPHY TOKENS --- */
+  --font-family-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Fluid Typography using clamp() for smooth responsive scaling */
+  --font-size-display: clamp(2.25rem, 5vw + 1rem, 3.75rem);   /* 36px -> 60px */
+  --font-size-h1: clamp(1.875rem, 3.5vw + 0.75rem, 2.75rem);   /* 30px -> 44px */
+  --font-size-h2: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);        /* 24px -> 32px */
+  --font-size-h3: clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);      /* 20px -> 24px */
+  --font-size-h4: clamp(1.125rem, 1vw + 0.35rem, 1.25rem);     /* 18px -> 20px */
+  --font-size-body-lead: 1.125rem;                             /* 18px */
+  --font-size-body: 1rem;                                      /* 16px */
+  --font-size-small: 0.875rem;                                 /* 14px */
+  --font-size-caption: 0.75rem;                                /* 12px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.65;
+
+  /* --- 3. SPACING TOKENS (8-pt Grid System) --- */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* --- 4. BORDER RADIUS TOKENS --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* --- 5. ELEVATION & SHADOW TOKENS --- */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 12px rgba(15, 76, 129, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 12px 28px rgba(15, 76, 129, 0.12), 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-dropdown: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.04);
+
+  /* --- 6. TRANSITION & MOTION TOKENS --- */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- 7. CONTAINER & LAYOUT BREAKPOINTS --- */
+  --container-max-width: 1200px;
+  --container-padding: clamp(1rem, 4vw, 2rem);
+}
+
+/* ==========================================================================
+   CSS RESET & BASE RESILIENCE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+img, svg, picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & FOCUS STYLES (WCAG 2.1 AA)
+   ========================================================================== */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Accessible Skip-to-Main-Content Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-small);
+  z-index: 9999;
+  transition: top var(--transition-fast);
+  box-shadow: var(--shadow-dropdown);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Respect Prefers-Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visually Hidden Utility for Screen Readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}

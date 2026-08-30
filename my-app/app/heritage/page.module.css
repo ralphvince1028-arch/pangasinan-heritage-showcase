@@ -1,0 +1,19 @@
+.pageHeader {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  background-color: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: 720px;
+}
+
+.contentSection {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+}
+

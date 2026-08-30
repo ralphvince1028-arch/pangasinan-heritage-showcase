@@ -1,0 +1,149 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(250, 249, 246, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  min-height: 44px;
+}
+
+.logoWrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-family: var(--font-family-serif);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+.brandSubtitle {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.desktopActions {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 840px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .desktopActions {
+    display: flex;
+  }
+
+  .mobileMenuButton {
+    display: none !important;
+  }
+}
+
+/* Mobile Hamburger Button */
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  transition: all var(--transition-fast);
+}
+
+.mobileMenuButton:hover {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-primary);
+}
+
+/* Mobile Drawer / Dropdown */
+.mobileDrawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface);
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-dropdown);
+  padding: var(--space-lg) var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: slideDown 200ms ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.mobileActions {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-subtle);
+}
+

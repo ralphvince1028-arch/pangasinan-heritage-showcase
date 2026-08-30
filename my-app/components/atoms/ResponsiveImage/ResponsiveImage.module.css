@@ -1,0 +1,66 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-surface-subtle);
+  display: block;
+}
+
+.figure {
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+.caption {
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Aspect Ratios */
+.aspect169 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect43 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect11 {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect219 {
+  aspect-ratio: 21 / 9;
+}
+
+/* Border Radius */
+.radiusSm {
+  border-radius: var(--radius-sm);
+}
+
+.radiusMd {
+  border-radius: var(--radius-md);
+}
+
+.radiusLg {
+  border-radius: var(--radius-lg);
+}
+
+.radiusFull {
+  border-radius: var(--radius-full);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-normal);
+}
+
+.zoomOnHover:hover .image {
+  transform: scale(1.04);
+}
+

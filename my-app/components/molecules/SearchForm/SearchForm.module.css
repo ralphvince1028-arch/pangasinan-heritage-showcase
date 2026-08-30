@@ -1,0 +1,147 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.searchBarWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 3rem 0.875rem 2.875rem;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  min-height: 48px;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+}
+
+.clearButton {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.clearButton:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-subtle);
+}
+
+.categoryGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.categoryLabel {
+  font-size: var(--font-size-caption);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.pillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.pill {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.pillActive {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pillActive:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.resetLink {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.resetLink:hover {
+  color: var(--color-primary-hover);
+}
+

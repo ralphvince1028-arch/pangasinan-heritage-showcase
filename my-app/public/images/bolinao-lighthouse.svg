@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bl-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="40%" stop-color="#38BDF8"/>
+      <stop offset="80%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+    <linearGradient id="bl-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+    <linearGradient id="bl-cliff" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="50%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1F2937"/>
+    </linearGradient>
+    <linearGradient id="bl-beam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#FEF08A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FEF08A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Sunset Sky -->
+  <rect width="1200" height="460" fill="url(#bl-sky)"/>
+  <circle cx="280" cy="380" r="90" fill="#FFFBEB" opacity="0.9"/>
+  <!-- Sea -->
+  <rect y="440" width="1200" height="235" fill="url(#bl-sea)"/>
+  
+  <!-- Coastal Cliff / Punta Piedra -->
+  <path d="M 400,675 L 480,430 C 530,420 580,440 680,410 C 760,390 840,430 920,400 L 1200,430 L 1200,675 Z" fill="url(#bl-cliff)"/>
+  <!-- Greenery on Cliff -->
+  <path d="M 470,435 C 520,415 600,425 660,405 C 720,385 820,410 900,395 L 1200,420 L 1200,460 C 950,440 700,440 470,435 Z" fill="#15803D"/>
+
+  <!-- Light Beam from Lantern -->
+  <polygon points="760,185 0,80 0,380" fill="url(#bl-beam)"/>
+
+  <!-- Cape Bolinao Lighthouse Structure -->
+  <!-- Foundation Base -->
+  <rect x="710" y="370" width="100" height="40" rx="4" fill="#E5E7EB"/>
+  <rect x="700" y="390" width="120" height="20" rx="3" fill="#9CA3AF"/>
+
+  <!-- Tapered Tower Shaft -->
+  <polygon points="730,195 790,195 805,370 715,370" fill="#F3F4F6"/>
+  <!-- Shading on Tower -->
+  <polygon points="760,195 790,195 805,370 775,370" fill="#E5E7EB"/>
+  <!-- Windows -->
+  <rect x="753" y="240" width="14" height="22" rx="7" fill="#1F2937"/>
+  <rect x="753" y="295" width="14" height="24" rx="7" fill="#1F2937"/>
+
+  <!-- Balcony Gallery & Railing -->
+  <rect x="715" y="190" width="90" height="8" rx="2" fill="#374151"/>
+  <rect x="720" y="180" width="80" height="10" fill="#1F2937" opacity="0.3"/>
+  <line x1="720" y1="182" x2="800" y2="182" stroke="#1F2937" stroke-width="2"/>
+
+  <!-- Lantern Room -->
+  <rect x="735" y="150" width="50" height="35" rx="3" fill="#FEF08A" stroke="#374151" stroke-width="3"/>
+  <!-- Dome Roof & Finial -->
+  <path d="M 730,150 C 730,120 790,120 790,150 Z" fill="#DC2626"/>
+  <line x1="760" y1="120" x2="760" y2="105" stroke="#374151" stroke-width="3"/>
+  <circle cx="760" cy="105" r="4" fill="#DC2626"/>
+
+  <!-- Surrounding Foliage & Trees -->
+  <circle cx="680" cy="410" r="28" fill="#166534"/>
+  <circle cx="840" cy="400" r="35" fill="#14532D"/>
+  <circle cx="890" cy="410" r="40" fill="#166534"/>
+</svg>
+

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="60%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#F0F9FF"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="island" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15803D"/>
+      <stop offset="70%" stop-color="#166534"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Sky -->
+  <rect width="1200" height="420" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="950" cy="140" r="55" fill="#FDE047" opacity="0.85"/>
+  <!-- Distant Clouds -->
+  <path d="M 200,120 Q 240,90 290,110 Q 340,95 380,125 Q 400,140 370,160 L 220,160 Z" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M 700,90 Q 740,65 790,80 Q 830,70 860,95 L 680,105 Z" fill="#FFFFFF" opacity="0.5"/>
+  <!-- Sea Horizon -->
+  <rect y="380" width="1200" height="295" fill="url(#sea)"/>
+  <!-- Shallow Coral Water Ripple -->
+  <ellipse cx="600" cy="460" rx="550" ry="60" fill="#38BDF8" opacity="0.25"/>
+  <ellipse cx="320" cy="530" rx="280" ry="40" fill="#0EA5E9" opacity="0.2"/>
+  <ellipse cx="880" cy="560" rx="300" ry="45" fill="#0EA5E9" opacity="0.2"/>
+  
+  <!-- Hundred Islands Formations -->
+  <!-- Distant Islands -->
+  <path d="M 120,380 Q 180,310 240,380 Z" fill="#14532D" opacity="0.6"/>
+  <path d="M 780,380 Q 840,320 910,380 Z" fill="#14532D" opacity="0.6"/>
+  <path d="M 980,380 Q 1040,335 1100,380 Z" fill="#14532D" opacity="0.6"/>
+  
+  <!-- Midground Island Left -->
+  <g filter="url(#shadow)">
+    <!-- Island Top Greenery -->
+    <path d="M 160,420 C 140,320 220,260 320,270 C 400,275 460,330 430,420 C 410,430 380,415 350,425 C 310,410 260,420 230,415 C 190,430 170,425 160,420 Z" fill="url(#island)"/>
+    <!-- Limestone Mushroom Undercut Base -->
+    <path d="M 210,415 C 230,435 250,445 280,445 C 310,445 330,440 370,445 C 390,445 400,430 410,420 C 370,440 330,435 300,435 C 260,435 230,430 210,415 Z" fill="#78350F"/>
+  </g>
+
+  <!-- Central Featured Island (Governor's Island Silhouette) -->
+  <g filter="url(#shadow)">
+    <path d="M 450,460 C 420,310 520,220 660,230 C 780,240 850,330 810,460 C 780,470 740,450 700,465 C 650,445 580,460 540,450 C 490,470 460,465 450,460 Z" fill="url(#island)"/>
+    <!-- Rocky Base -->
+    <path d="M 500,455 C 530,480 570,490 630,490 C 690,490 730,480 770,455 C 720,480 670,475 620,475 C 570,475 530,470 500,455 Z" fill="#5C2E0B"/>
+    <!-- Small Kayak -->
+    <ellipse cx="610" cy="560" rx="45" ry="8" fill="#F59E0B"/>
+    <circle cx="610" cy="552" r="5" fill="#1E293B"/>
+    <line x1="585" y1="556" x2="635" y2="556" stroke="#0F172A" stroke-width="2"/>
+  </g>
+
+  <!-- Foreground Island Right -->
+  <g filter="url(#shadow)">
+    <path d="M 850,480 C 830,380 910,310 990,320 C 1070,330 1120,400 1090,480 C 1060,490 1030,480 1000,490 C 960,480 920,490 890,485 C 870,490 855,485 850,480 Z" fill="url(#island)"/>
+    <path d="M 890,480 C 920,500 960,505 1010,505 C 1050,505 1075,495 1085,480 C 1050,495 1015,492 980,492 C 940,492 910,488 890,480 Z" fill="#78350F"/>
+  </g>
+</svg>
+
