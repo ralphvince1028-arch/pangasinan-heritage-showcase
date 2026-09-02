@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { assetPath } from '@/utils/assetPath';
 import { NavigationItem } from '@/components/molecules/NavigationItem';
 import { Button } from '@/components/atoms/Button';
 import { Icon } from '@/components/atoms/Icon';
@@ -19,7 +20,8 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ className = 
 
   // Close mobile drawer when route changes
   useEffect(() => {
-    setIsOpen(false);
+    const timer = setTimeout(() => setIsOpen(false), 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   // Close on Escape key press
@@ -46,7 +48,7 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ className = 
         <Link href="/" className={styles.brand} aria-label="Pangasinan Heritage Showcase Home">
           <div className={styles.logoWrapper}>
             <Image
-              src="/images/pangasinan-logo.png"
+              src={assetPath('/images/pangasinan-logo.png')}
               alt="Pangasinan Provincial Tourism Logo"
               width={42}
               height={42}

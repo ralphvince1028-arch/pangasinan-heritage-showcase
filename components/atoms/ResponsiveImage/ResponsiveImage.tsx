@@ -1,5 +1,6 @@
 import React from 'react';
 import Image, { ImageProps } from 'next/image';
+import { assetPath } from '@/utils/assetPath';
 import styles from './ResponsiveImage.module.css';
 
 export type AspectRatio = '16/9' | '4/3' | '1/1' | '21/9' | 'auto';
@@ -27,6 +28,8 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
   ...restProps
 }) => {
+  const resolvedSrc = assetPath(src);
+
   const aspectClassMap: Record<AspectRatio, string> = {
     '16/9': styles.aspect169,
     '4/3': styles.aspect43,
@@ -56,7 +59,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   const imageElement = (
     <div className={wrapperClasses}>
       <Image
-        src={src}
+        src={resolvedSrc}
         alt={alt}
         fill
         sizes={sizes}
@@ -81,4 +84,6 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
 };
 
 export default ResponsiveImage;
+
+
 

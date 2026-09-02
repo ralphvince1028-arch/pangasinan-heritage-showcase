@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { assetPath } from '@/utils/assetPath';
 import { Icon } from '@/components/atoms/Icon';
 import styles from './Footer.module.css';
 
@@ -17,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           <div className={styles.brandCol}>
             <div className={styles.brandHeader}>
               <Image
-                src="/images/pangasinan-logo.png"
+                src={assetPath('/images/pangasinan-logo.png')}
                 alt="Pangasinan Tourism Logo"
                 width={36}
                 height={36}

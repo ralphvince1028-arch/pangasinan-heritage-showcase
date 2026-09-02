@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+
 import { getFeaturedDestinations } from '@/data/heritage';
 import { Typography } from '@/components/atoms/Typography';
 import { Button } from '@/components/atoms/Button';
