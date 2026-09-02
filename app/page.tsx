@@ -52,7 +52,7 @@ export default function HomePage() {
 
           <div className={styles.heroVisual}>
             <ResponsiveImage
-              src="/images/hero-pangasinan.svg"
+              src="/images/hero-pangasinan.png"
               alt="Panoramic view of Pangasinan coastal islands and horizon at sunrise"
               aspectRatio="16/9"
               priority

@@ -41,16 +41,16 @@ export const DESTINATIONS: Destination[] = [
         description: 'Underwater natural caverns and coral shelves accommodating eco-friendly water exploration.'
       }
     ],
-    imageUrl: '/images/hundred-islands.svg',
+    imageUrl: '/images/hundred-islands.png',
     imageAlt: 'Scenic panoramic view of the mushroom-shaped limestone islets of Hundred Islands National Park in Alaminos, Pangasinan',
     gallery: [
       {
-        url: '/images/hundred-islands.svg',
+        url: '/images/hundred-islands.png',
         caption: 'Aerial perspective of the turquoise waters and emerald islets.',
         alt: 'Hundred Islands emerald islets rising above clear blue waters'
       },
       {
-        url: '/images/hundred-islands.svg',
+        url: '/images/hundred-islands.png',
         caption: 'Protected marine reef teeming with native aquatic life.',
         alt: 'Coral reef formations at Hundred Islands'
       }
@@ -85,16 +85,16 @@ export const DESTINATIONS: Destination[] = [
         description: 'Recognized landmark symbolizing colonial-era maritime safety infrastructure in the Philippines.'
       }
     ],
-    imageUrl: '/images/bolinao-lighthouse.svg',
+    imageUrl: '/images/bolinao-lighthouse.png',
     imageAlt: 'Historic Cape Bolinao Lighthouse standing tall against the coastal sky in Bolinao, Pangasinan',
     gallery: [
       {
-        url: '/images/bolinao-lighthouse.svg',
+        url: '/images/bolinao-lighthouse.png',
         caption: 'The century-old beacon perched upon Punta Piedra limestone cliff.',
         alt: 'Cape Bolinao Lighthouse tower detail'
       },
       {
-        url: '/images/bolinao-lighthouse.svg',
+        url: '/images/bolinao-lighthouse.png',
         caption: 'Panoramic ocean view looking toward Patar coastal horizon.',
         alt: 'West Philippine Sea coastline viewed from the lighthouse cliff'
       }
@@ -129,16 +129,16 @@ export const DESTINATIONS: Destination[] = [
         description: 'Features one of Northern Luzon’s pioneering hillside ziplines and cable canopy walks.'
       }
     ],
-    imageUrl: '/images/balungao-hot-spring.svg',
+    imageUrl: '/images/balungao-hot-spring.png',
     imageAlt: 'Serene natural geothermal hot spring pools surrounded by lush greenery in Balungao, Pangasinan',
     gallery: [
       {
-        url: '/images/balungao-hot-spring.svg',
+        url: '/images/balungao-hot-spring.png',
         caption: 'Warm mineral pool waters fed directly by Mount Balungao geothermal veins.',
         alt: 'Balungao hot spring thermal pool waters'
       },
       {
-        url: '/images/balungao-hot-spring.svg',
+        url: '/images/balungao-hot-spring.png',
         caption: 'Lush tree canopies enveloping the inland resort landscape.',
         alt: 'Foothills of Mount Balungao'
       }
@@ -173,11 +173,11 @@ export const DESTINATIONS: Destination[] = [
         description: 'Quiet outdoor garden pathways designed for reflective prayer and tranquil respite.'
       }
     ],
-    imageUrl: '/images/manaoag-basilica.svg',
+    imageUrl: '/images/manaoag-basilica.png',
     imageAlt: 'The majestic facade and belfry of the Minor Basilica of Our Lady of Manaoag in Pangasinan',
     gallery: [
       {
-        url: '/images/manaoag-basilica.svg',
+        url: '/images/manaoag-basilica.png',
         caption: 'Historic facade of the Minor Basilica in Manaoag.',
         alt: 'Manaoag Basilica facade'
       }
@@ -212,11 +212,11 @@ export const DESTINATIONS: Destination[] = [
         description: 'Expansive public promenade offering tranquil sea breezes, pine tree groves, and golden sands.'
       }
     ],
-    imageUrl: '/images/provincial-capitol.svg',
+    imageUrl: '/images/provincial-capitol.png',
     imageAlt: 'Neoclassical architecture of the Pangasinan Provincial Capitol building in Lingayen',
     gallery: [
       {
-        url: '/images/provincial-capitol.svg',
+        url: '/images/provincial-capitol.png',
         caption: 'Colonnaded facade of the Pangasinan Provincial Capitol.',
         alt: 'Pangasinan Capitol building'
       }
@@ -251,11 +251,11 @@ export const DESTINATIONS: Destination[] = [
         description: 'Tributary nature trails leading to hidden refreshing freshwater cascades.'
       }
     ],
-    imageUrl: '/images/balingasay-river.svg',
+    imageUrl: '/images/balingasay-river.png',
     imageAlt: 'Lush green mangrove trees flanking the crystal clear waters of Balingasay River in Bolinao',
     gallery: [
       {
-        url: '/images/balingasay-river.svg',
+        url: '/images/balingasay-river.png',
         caption: 'Calm reflective waters flanked by thick mangrove canopies.',
         alt: 'Balingasay River landscape'
       }
@@ -290,11 +290,11 @@ export const DESTINATIONS: Destination[] = [
         description: 'Unobstructed western horizon vistas where the golden sun sets directly behind the rock formations.'
       }
     ],
-    imageUrl: '/images/umbrella-rocks.svg',
+    imageUrl: '/images/umbrella-rocks.png',
     imageAlt: 'Unique umbrella-shaped rock formations lining the coast of Agno, Pangasinan',
     gallery: [
       {
-        url: '/images/umbrella-rocks.svg',
+        url: '/images/umbrella-rocks.png',
         caption: 'The iconic mushroom-shaped boulders of Agno facing the open sea.',
         alt: 'Umbrella rocks in Agno'
       }
@@ -329,11 +329,11 @@ export const DESTINATIONS: Destination[] = [
         description: 'Rugged fossilized coral shelves providing dramatic coastal backdrops against ocean spray.'
       }
     ],
-    imageUrl: '/images/patar-beach.svg',
+    imageUrl: '/images/patar-beach.png',
     imageAlt: 'Pristine turquoise waters and golden coral sands at Patar Beach in Bolinao, Pangasinan',
     gallery: [
       {
-        url: '/images/patar-beach.svg',
+        url: '/images/patar-beach.png',
         caption: 'Patar Beach coast during a serene golden sunset.',
         alt: 'Patar Beach coast'
       }

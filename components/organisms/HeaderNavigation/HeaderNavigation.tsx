@@ -46,7 +46,7 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ className = 
         <Link href="/" className={styles.brand} aria-label="Pangasinan Heritage Showcase Home">
           <div className={styles.logoWrapper}>
             <Image
-              src="/images/pangasinan-logo.svg"
+              src="/images/pangasinan-logo.png"
               alt="Pangasinan Provincial Tourism Logo"
               width={42}
               height={42}

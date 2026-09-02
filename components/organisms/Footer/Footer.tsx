@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
           <div className={styles.brandCol}>
             <div className={styles.brandHeader}>
               <Image
-                src="/images/pangasinan-logo.svg"
+                src="/images/pangasinan-logo.png"
                 alt="Pangasinan Tourism Logo"
                 width={36}
                 height={36}

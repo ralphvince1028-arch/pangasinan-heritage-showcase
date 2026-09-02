@@ -320,7 +320,7 @@ export default function DesignSystemPage() {
           <div className={styles.imageDemoCard}>
             <span className={styles.imageDemoLabel}>Aspect Ratio 16:9 (Widescreen)</span>
             <ResponsiveImage
-              src="/images/hundred-islands.svg"
+              src="/images/hundred-islands.png"
               alt="Hundred Islands preview 16:9"
               aspectRatio="16/9"
               radius="md"
@@ -331,7 +331,7 @@ export default function DesignSystemPage() {
           <div className={styles.imageDemoCard}>
             <span className={styles.imageDemoLabel}>Aspect Ratio 4:3 (Standard)</span>
             <ResponsiveImage
-              src="/images/bolinao-lighthouse.svg"
+              src="/images/bolinao-lighthouse.png"
               alt="Bolinao Lighthouse preview 4:3"
               aspectRatio="4/3"
               radius="md"
@@ -342,7 +342,7 @@ export default function DesignSystemPage() {
           <div className={styles.imageDemoCard}>
             <span className={styles.imageDemoLabel}>Aspect Ratio 1:1 (Square)</span>
             <ResponsiveImage
-              src="/images/balungao-hot-spring.svg"
+              src="/images/balungao-hot-spring.png"
               alt="Balungao Hot Spring preview 1:1"
               aspectRatio="1/1"
               radius="md"
