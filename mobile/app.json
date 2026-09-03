@@ -1,0 +1,32 @@
+﻿{
+  "expo": {
+    "name": "Pangasinan Heritage",
+    "slug": "pangasinan-heritage-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "pangasinan",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#182A35",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pangasinan.heritage"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#182A35"
+      },
+      "package": "com.pangasinan.heritage"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
