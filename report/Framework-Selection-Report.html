@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Framework Selection Report</title>
+  <style>
+    body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; line-height: 1.65; color: #202322; background: #FBF8F1; max-width: 880px; margin: 40px auto; padding: 0 24px; }
+    h1 { color: #182A35; font-family: 'Georgia', serif; border-bottom: 2px solid #B85C3D; padding-bottom: 12px; margin-top: 0; }
+    h2 { color: #182A35; font-family: 'Georgia', serif; border-bottom: 1px solid #E2D7C3; padding-bottom: 6px; margin-top: 36px; }
+    h3 { color: #B85C3D; margin-top: 24px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #FFF; }
+    th, td { border: 1px solid #E2D7C3; padding: 10px 14px; text-align: left; }
+    th { background: #182A35; color: #FBF8F1; font-weight: 600; }
+    code { background: #E8DDCA; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+    pre { background: #182A35; color: #FBF8F1; padding: 16px; border-radius: 6px; overflow-x: auto; }
+    pre code { background: none; color: inherit; padding: 0; }
+    hr { border: none; border-top: 1px solid #E2D7C3; margin: 30px 0; }
+    strong { color: #182A35; }
+    @media print { body { background: #FFF; margin: 0; max-width: 100%; } }
+  </style>
+</head>
+<body>
+  ﻿# Framework Selection Report: React (Next.js 14 App Router) vs. Vue (Nuxt 3)
+<strong>Course / Subject:</strong> Elective 4 – Special Topics in IT  
+<strong>Project:</strong> Pangasinan Heritage Digital Showcase  
+<strong>Author / Student:</strong> Ralph Vince De Venecia  
+<strong>Date:</strong> September 2026  
+<strong>Selected Framework:</strong> React + Next.js 14 App Router (Static Export)
+
+<hr/>
+
+<h2>1. Executive Summary</h2>
+
+The Pangasinan Heritage Digital Showcase is an academic and public-facing digital tourism platform developed for the Pangasinan Provincial Tourism Office. The platform requires high performance on mobile networks (3G/4G cellular connections across coastal and rural municipalities), WCAG 2.1 AA accessibility, strict implementation of Brad Frost’s Atomic Design methodology, and seamless JAMstack static export deployment to GitHub Pages.
+
+This report presents an in-depth quantitative and qualitative evaluation comparing two modern frontend web frameworks:
+1. <strong>React 18/19 with Next.js 14 App Router</strong> (React Server Components, Static Export, Turbopack)
+2. <strong>Vue 3 with Nuxt.js 3</strong> (Nitro Engine, Composition API, Static Site Generation)
+
+Based on our weighted multi-criteria decision matrix, <strong>React + Next.js 14 App Router scored 93.5/100</strong>, outperforming <strong>Vue + Nuxt 3 (85.0/100)</strong>, and was selected as the framework for this initiative.
+
+<hr/>
+
+<h2>2. Evaluation Criteria & Weighted Scoring Methodology</h2>
+
+To ensure objective evaluation, six industry-standard architectural criteria were weighted according to project priorities:
+
+| Evaluation Criterion | Weight | Description & Relevance to Pangasinan Project |
+|<hr/>|:<hr/>:|<hr/>|
+| <strong>1. Static Delivery & Mobile Performance</strong> | 20% | Zero-JS default rendering, static export speed, bundle compression for 3G/4G connectivity. |
+| <strong>2. Architectural Fit & Project Suitability</strong> | 20% | Compatibility with Brad Frost's Atomic Design, directory-based routing, and GitHub Pages. |
+| <strong>3. Developer Velocity & Type Safety</strong> | 15% | TypeScript integration, build tooling (Turbopack vs Vite), component authoring ergonomics. |
+| <strong>4. Component Architecture & Modular Design</strong>| 15% | Isolation of Atoms, Molecules, Organisms, and strict CSS Modules encapsulation. |
+| <strong>5. Ecosystem Maturity & Longevity</strong> | 15% | Enterprise adoption, long-term support, stability of static export plugins. |
+| <strong>6. Documentation, Community & Learning Curve</strong>| 15% | Student explicability, official documentation clarity, community support. |
+| <strong>Total Weight</strong> | <strong>100%</strong> | |
+
+<hr/>
+
+<h2>3. Comparative Analysis</h2>
+
+<h3>Criterion 1: Static Delivery & Mobile Performance (Weight: 20%)</h3>
+- <strong>Next.js 14 App Router (Score: 19.0 / 20.0):</strong>
+  Next.js 14 introduces React Server Components (RSC) by default. Components like <code>HomeHero</code>, <code>FeaturedStory</code>, and <code>Footer</code> ship zero client-side JavaScript. Only interactive elements (<code>SearchForm</code>, <code>HeaderNavigation</code> mobile drawer) include client JavaScript. Static export via <code>output: 'export'</code> generates lightweight, prerendered HTML and optimized static chunks.
+- <strong>Nuxt 3 (Score: 17.5 / 20.0):</strong>
+  Nuxt 3 uses Nitro for static pre-rendering (<code>nuxt generate</code>). While highly capable, Nuxt hydrates client components by default unless explicit islands/server components are configured.
+
+<h3>Criterion 2: Architectural Fit & Project Suitability (Weight: 20%)</h3>
+- <strong>Next.js 14 App Router (Score: 19.0 / 20.0):</strong>
+  The directory-based App Router structure (<code>app/destinations/</code>, <code>app/destinations/[slug]/</code>, <code>app/heritage/</code>) maps directly to tourism browsing hierarchies. Dynamic detail routes are statically prerendered using <code>generateStaticParams()</code>. Base path resolution for GitHub Pages is configured via <code>next.config.ts</code>.
+- <strong>Nuxt 3 (Score: 17.0 / 20.0):</strong>
+  Nuxt 3 file-based routing (<code>pages/destinations/[slug].vue</code>) is clean, but configuring asset prefixes and static export loaders for nested subdirectories on GitHub Pages requires more Nitro plugin overrides.
+
+<h3>Criterion 3: Developer Velocity & Type Safety (Weight: 15%)</h3>
+- <strong>Next.js 14 App Router (Score: 14.0 / 15.0):</strong>
+  First-class TypeScript integration with end-to-end typed routes and automated type-checking via <code>tsc</code>. Turbopack provides sub-second incremental compilation during development.
+- <strong>Nuxt 3 (Score: 13.0 / 15.0):</strong>
+  Vite-powered Nuxt 3 provides fast HMR. Volar / TypeScript support for <code>.vue</code> single file components is strong, though template type-checking can occasionally produce complex diagnostics.
+
+<h3>Criterion 4: Component Architecture & Atomic Design (Weight: 15%)</h3>
+- <strong>Next.js 14 App Router (Score: 14.5 / 15.0):</strong>
+  React's pure component model matches Brad Frost’s Atomic Design seamlessly. Atoms (<code>Button</code>, <code>Typography</code>, <code>Icon</code>, <code>ResponsiveImage</code>), Molecules (<code>HeritageCard</code>, <code>SearchForm</code>), and Organisms (<code>HeaderNavigation</code>, <code>HeritageGrid</code>) are neatly isolated in dedicated folders with zero cross-leakage via CSS Modules.
+- <strong>Nuxt 3 (Score: 13.0 / 15.0):</strong>
+  Vue SFCs encapsulate templates, scripts, and scoped styles well, but Atomic component composition with polymorphic rendering (<code>as="h1"</code> or Next Link vs Button) is more verbose in Vue.
+
+<h3>Criterion 5: Ecosystem Maturity & Longevity (Weight: 15%)</h3>
+- <strong>Next.js 14 App Router (Score: 14.0 / 15.0):</strong>
+  Backed by Vercel and React Core Team. Extensive production deployments across Fortune 500 companies and government tourism boards ensure decades of architectural longevity.
+- <strong>Nuxt 3 (Score: 12.5 / 15.0):</strong>
+  Strong open-source community, but smaller ecosystem footprint compared to the broader React ecosystem.
+
+<h3>Criterion 6: Documentation, Community & Learning Curve (Weight: 15%)</h3>
+- <strong>Next.js 14 App Router (Score: 13.0 / 15.0):</strong>
+  Exhaustive official Next.js documentation, vast educational tutorials, and clear concepts that allow IT students to explain architectural choices during defense.
+- <strong>Nuxt 3 (Score: 12.0 / 15.0):</strong>
+  Clean documentation, but transitions between Nuxt 2, Nuxt Bridge, and Nuxt 3 created legacy fragmentation in search results.
+
+<hr/>
+
+<h2>4. Quantitative Scoring Matrix</h2>
+
+| Criterion | Weight | Next.js 14 Score (1-100) | Next.js Weighted | Nuxt 3 Score (1-100) | Nuxt 3 Weighted |
+|<hr/>|:<hr/>:|:<hr/>:|:<hr/>:|:<hr/>:|:<hr/>:|
+| 1. Static Delivery & Mobile Performance | 20% | 95 | 19.0 | 88 | 17.6 |
+| 2. Architectural Fit & Project Suitability | 20% | 95 | 19.0 | 85 | 17.0 |
+| 3. Developer Velocity & Type Safety | 15% | 93 | 14.0 | 87 | 13.1 |
+| 4. Component Architecture & Atomic Design | 15% | 97 | 14.5 | 87 | 13.1 |
+| 5. Ecosystem Maturity & Longevity | 15% | 93 | 14.0 | 83 | 12.5 |
+| 6. Documentation & Student Explicability | 15% | 87 | 13.0 | 78 | 11.7 |
+| <strong>Final Composite Score</strong> | <strong>100%</strong> | <strong>—</strong> | <strong>93.5 / 100</strong> | <strong>—</strong> | <strong>85.0 / 100</strong> |
+
+<hr/>
+
+<h2>5. Conclusion & Final Recommendation</h2>
+
+<strong>React + Next.js 14 App Router</strong> is the definitively superior choice for the Pangasinan Heritage Digital Showcase. It delivers:
+1. <strong>Uncompromised 3G/4G Mobile Performance</strong> through zero-JS Server Components by default.
+2. <strong>Strict Atomic Design Modularization</strong> with clean TypeScript interfaces and scoped CSS Modules.
+3. <strong>Robust JAMstack Static Export</strong> pre-rendering all dynamic destination pages into standalone static HTML files for GitHub Pages deployment.
+</body>
+</html>

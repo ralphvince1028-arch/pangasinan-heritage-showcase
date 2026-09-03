@@ -1,0 +1,22 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 2522 >>
+stream
+BT /F1 10 Tf 50 750 Td 14 TL (Atomic Design System Manual) Tj T* ( # Atomic Design System Manual: Pangasinan Heritage Digital Showcase) Tj T* (**Course / Subject:** Elective 4   Special Topics in IT  ) Tj T* (**Student:** Ralph Vince De Venecia  ) Tj T* (**Methodology:** Brad Frost s Atomic Design Atoms, Molecules, Organisms, Sections  ) Tj T* (**Visual Identity:** Contemporary Coastal Heritage Editorial  ) Tj T* (**Color Scheme:** Deep Navy `#182A35`, Warm Sand `#F3EBDD`, Burnt Clay `#B85C3D`, Sea Glass `#6) Tj T* (---) Tj T* (## 1. System Overview & Hierarchy) Tj T* (Brad Frost s Atomic Design methodology establishes a modular component hierarchy that promotes ) Tj T* (```) Tj T* (Atoms Tokens, Button, Typography, Icon, ResponsiveImage) Tj T* (      Molecules HeritageCard, SearchForm, NavigationItem) Tj T* (            Organisms HeaderNavigation, HeritageGrid, Footer) Tj T* (                  Templates & Sections HomeHero, FeaturedStory, HeritageFeature, ExperienceStri) Tj T* (                        Pages Home, Destinations Directory, Destination Details, Heritage & Cul) Tj T* (```) Tj T* (---) Tj T* (## 2. Atoms) Tj T* (### 2.1. Design Tokens `styles/tokens.css`) Tj T* (- **Usage Context:** Defines centralized CSS Custom Properties for colors, typography, spacing,) Tj T* (- **Responsive Logic:** Adapts `--container-padding` from `1.5rem` on mobile to `2.5rem` on tab) Tj T* (- **Code Reference:**) Tj T* (```css) Tj T* (:root {) Tj T* (  --color-navy: #182A35;) Tj T* (  --color-sand: #F3EBDD;) Tj T* (  --color-clay: #B85C3D;) Tj T* (  --color-seaglass: #6F9C97;) Tj T* (  --color-rice-white: #FBF8F1;) Tj T* (  --color-charcoal: #202322;) Tj T* (  --font-editorial-serif: 'Playfair Display', Georgia, serif;) Tj T* (  --font-body-sans: 'Plus Jakarta Sans', Inter, sans-serif;) Tj T* (}) Tj T* (```) Tj T* (---) Tj T* (### 2.2. Button Atom `components/atoms/Button`) Tj T* (- **Visual Preview:** Rectangular button with Burnt Clay background `primary`, Navy border `out) Tj T* (- **Usage Context:** Triggers actions or navigates to destination pages throughout the showcase) Tj T* (- **Responsive Logic:** Scales font size and padding across `sm`, `md`, `lg`. Supports `fullWid) Tj T* (- **Code Reference:**) Tj T* (```tsx) Tj T* (export const Button: React.FC<ButtonProps> = {) Tj T* (  variant = 'primary',) Tj T* (  size = 'md',) Tj T* (  href,) Tj T* (  children,) Tj T* (  iconRight,) Tj T* (} => {) Tj T* (  const combined = `${styles.button} ${styles[variant]} ${styles[size]}`;) Tj T* ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000222 00000 n 
+0000000299 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+2922
+%%EOF

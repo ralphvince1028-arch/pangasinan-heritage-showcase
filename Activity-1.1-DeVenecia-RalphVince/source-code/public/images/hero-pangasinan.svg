@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="hp-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="35%" stop-color="#0284C7"/>
+      <stop offset="70%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#FED7AA"/>
+    </linearGradient>
+    <linearGradient id="hp-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="40%" stop-color="#0369A1"/>
+      <stop offset="80%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+    <linearGradient id="hp-island" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#166534"/>
+      <stop offset="70%" stop-color="#14532D"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+  </defs>
+  <!-- Atmospheric Sky -->
+  <rect width="1600" height="580" fill="url(#hp-sky)"/>
+  <circle cx="1250" cy="240" r="85" fill="#FEF3C7" opacity="0.85"/>
+  <circle cx="1250" cy="240" r="115" fill="#FEF08A" opacity="0.25"/>
+
+  <!-- Soft Clouds -->
+  <path d="M 200,180 Q 300,120 420,160 Q 520,130 600,180 Z" fill="#FFFFFF" opacity="0.3"/>
+  <path d="M 850,140 Q 950,90 1060,130 Q 1140,110 1200,150 Z" fill="#FFFFFF" opacity="0.25"/>
+
+  <!-- Deep Blue Ocean Waters -->
+  <rect y="540" width="1600" height="360" fill="url(#hp-sea)"/>
+  
+  <!-- Coastal Islets & Islets Panorama (Hundred Islands Silhouette) -->
+  <!-- Far Horizon Islands -->
+  <path d="M 50,540 Q 120,480 200,540 Z" fill="#064E3B" opacity="0.6"/>
+  <path d="M 380,540 Q 460,490 540,540 Z" fill="#064E3B" opacity="0.6"/>
+  <path d="M 980,540 Q 1060,480 1140,540 Z" fill="#064E3B" opacity="0.6"/>
+  <path d="M 1320,540 Q 1400,490 1480,540 Z" fill="#064E3B" opacity="0.6"/>
+
+  <!-- Midground Emerald Islands -->
+  <path d="M 160,560 C 130,440 240,360 380,380 C 480,390 550,460 520,560 C 490,575 440,555 400,570 C 350,550 280,565 240,555 C 190,575 170,570 160,560 Z" fill="url(#hp-island)"/>
+  <path d="M 230,555 C 260,575 300,580 340,580 C 380,580 410,570 450,580 C 470,580 480,565 490,555 C 440,570 400,568 360,568 C 310,568 270,565 230,555 Z" fill="#5C2E0B"/>
+
+  <!-- Grand Central Island with Cliff Face -->
+  <path d="M 620,590 C 580,410 700,300 880,310 C 1040,320 1120,430 1080,590 C 1040,605 990,580 940,600 C 880,575 790,595 740,580 C 680,605 640,600 620,590 Z" fill="url(#hp-island)"/>
+  <path d="M 680,580 C 720,610 770,620 850,620 C 930,620 980,610 1030,580 C 970,610 900,605 840,605 C 770,605 720,600 680,580 Z" fill="#451A03"/>
+
+  <!-- Distant Bolinao Cape & Lighthouse Silhouette on Right Horizon -->
+  <path d="M 1200,540 L 1260,490 L 1600,490 L 1600,560 Z" fill="#1E293B" opacity="0.8"/>
+  <polygon points="1380,440 1390,440 1395,490 1375,490" fill="#E2E8F0"/>
+  <polygon points="1380,440 1390,440 1385,425" fill="#DC2626"/>
+
+  <!-- Shimmering Sea Reflection -->
+  <ellipse cx="880" cy="680" rx="600" ry="80" fill="#38BDF8" opacity="0.25"/>
+  <ellipse cx="880" cy="760" rx="400" ry="50" fill="#BAE6FD" opacity="0.2"/>
+</svg>
+

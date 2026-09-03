@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="pc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="70%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="430" fill="url(#pc-sky)"/>
+  <!-- Front Lawn Plaza -->
+  <rect y="430" width="1200" height="245" fill="#15803D"/>
+  <polygon points="600,430 400,675 800,675" fill="#E2E8F0"/>
+
+  <!-- Capitol Building Neoclassical Facade -->
+  <!-- Base Terrace Steps -->
+  <rect x="250" y="380" width="700" height="50" fill="#CBD5E1" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="280" y="350" width="640" height="30" fill="#E2E8F0"/>
+
+  <!-- Main Hall Body -->
+  <rect x="300" y="190" width="600" height="160" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+
+  <!-- Grand Classical Entablature & Pediment -->
+  <rect x="380" y="170" width="440" height="25" fill="#E2E8F0"/>
+  <polygon points="360,170 600,80 840,170" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <text x="600" y="150" font-family="serif" font-size="20" font-weight="bold" fill="#334155" text-anchor="middle" letter-spacing="4">PROVINCE OF PANGASINAN</text>
+
+  <!-- Neoclassical Ionic Columns -->
+  <g fill="#FFFFFF" stroke="#94A3B8" stroke-width="2">
+    <rect x="420" y="195" width="22" height="155" rx="2"/>
+    <rect x="470" y="195" width="22" height="155" rx="2"/>
+    <rect x="520" y="195" width="22" height="155" rx="2"/>
+    <rect x="570" y="195" width="22" height="155" rx="2"/>
+    <rect x="620" y="195" width="22" height="155" rx="2"/>
+    <rect x="670" y="195" width="22" height="155" rx="2"/>
+    <rect x="720" y="195" width="22" height="155" rx="2"/>
+    <rect x="770" y="195" width="22" height="155" rx="2"/>
+  </g>
+
+  <!-- Flanking Windows -->
+  <rect x="325" y="220" width="30" height="50" rx="4" fill="#334155"/>
+  <rect x="325" y="285" width="30" height="40" fill="#334155"/>
+  <rect x="845" y="220" width="30" height="50" rx="4" fill="#334155"/>
+  <rect x="845" y="285" width="30" height="40" fill="#334155"/>
+
+  <!-- Flanking Royal Palm Trees -->
+  <g stroke="#78350F" stroke-width="12">
+    <line x1="180" y1="480" x2="160" y2="280"/>
+    <line x1="1020" y1="480" x2="1040" y2="280"/>
+  </g>
+  <circle cx="160" cy="270" r="50" fill="#166534"/>
+  <circle cx="1040" cy="270" r="50" fill="#166534"/>
+</svg>
+

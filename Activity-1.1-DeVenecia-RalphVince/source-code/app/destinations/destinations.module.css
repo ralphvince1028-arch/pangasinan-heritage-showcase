@@ -1,0 +1,79 @@
+﻿.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerSection {
+  padding: 4.5rem 0 3.5rem;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerContent {
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.headerEyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.headerTitle {
+  margin-bottom: 1rem;
+}
+
+.headerLead {
+  line-height: 1.65;
+}
+
+.controlsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 860px;
+}
+
+.searchWrapper {
+  width: 100%;
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.filterPill {
+  padding: 0.5rem 1.125rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-navy);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterPill:hover {
+  border-color: var(--color-clay);
+  color: var(--color-clay);
+}
+
+.filterPillActive {
+  background-color: var(--color-clay);
+  color: var(--color-rice-white) !important;
+  border-color: var(--color-clay);
+}
+
+.gridSection {
+  padding: 4rem 0 6rem;
+  background-color: var(--color-bg-surface);
+}
+
+.resultsMeta {
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}

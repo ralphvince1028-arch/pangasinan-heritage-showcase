@@ -1,0 +1,22 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 3639 >>
+stream
+BT /F1 10 Tf 50 750 Td 14 TL (Framework Selection Report) Tj T* ( # Framework Selection Report: React Next.js 14 App Router vs. Vue Nuxt 3) Tj T* (**Course / Subject:** Elective 4   Special Topics in IT  ) Tj T* (**Project:** Pangasinan Heritage Digital Showcase  ) Tj T* (**Author / Student:** Ralph Vince De Venecia  ) Tj T* (**Date:** September 2026  ) Tj T* (**Selected Framework:** React + Next.js 14 App Router Static Export) Tj T* (---) Tj T* (## 1. Executive Summary) Tj T* (The Pangasinan Heritage Digital Showcase is an academic and public-facing digital tourism platf) Tj T* (This report presents an in-depth quantitative and qualitative evaluation comparing two modern f) Tj T* (1. **React 18/19 with Next.js 14 App Router** React Server Components, Static Export, Turbopack) Tj T* (2. **Vue 3 with Nuxt.js 3** Nitro Engine, Composition API, Static Site Generation) Tj T* (Based on our weighted multi-criteria decision matrix, **React + Next.js 14 App Router scored 93) Tj T* (---) Tj T* (## 2. Evaluation Criteria & Weighted Scoring Methodology) Tj T* (To ensure objective evaluation, six industry-standard architectural criteria were weighted acco) Tj T* (| Evaluation Criterion | Weight | Description & Relevance to Pangasinan Project |) Tj T* (|---|:---:|---|) Tj T* (| **1. Static Delivery & Mobile Performance** | 20% | Zero-JS default rendering, static export ) Tj T* (| **2. Architectural Fit & Project Suitability** | 20% | Compatibility with Brad Frost's Atomic) Tj T* (| **3. Developer Velocity & Type Safety** | 15% | TypeScript integration, build tooling Turbopa) Tj T* (| **4. Component Architecture & Modular Design**| 15% | Isolation of Atoms, Molecules, Organism) Tj T* (| **5. Ecosystem Maturity & Longevity** | 15% | Enterprise adoption, long-term support, stabili) Tj T* (| **6. Documentation, Community & Learning Curve**| 15% | Student explicability, official docum) Tj T* (| **Total Weight** | **100%** | |) Tj T* (---) Tj T* (## 3. Comparative Analysis) Tj T* (### Criterion 1: Static Delivery & Mobile Performance Weight: 20%) Tj T* (- **Next.js 14 App Router Score: 19.0 / 20.0:**) Tj T* (  Next.js 14 introduces React Server Components RSC by default. Components like `HomeHero`, `Fe) Tj T* (- **Nuxt 3 Score: 17.5 / 20.0:**) Tj T* (  Nuxt 3 uses Nitro for static pre-rendering `nuxt generate`. While highly capable, Nuxt hydrat) Tj T* (### Criterion 2: Architectural Fit & Project Suitability Weight: 20%) Tj T* (- **Next.js 14 App Router Score: 19.0 / 20.0:**) Tj T* (  The directory-based App Router structure `app/destinations/`, `app/destinations/[slug]/`, `ap) Tj T* (- **Nuxt 3 Score: 17.0 / 20.0:**) Tj T* (  Nuxt 3 file-based routing `pages/destinations/[slug].vue` is clean, but configuring asset pre) Tj T* (### Criterion 3: Developer Velocity & Type Safety Weight: 15%) Tj T* (- **Next.js 14 App Router Score: 14.0 / 15.0:**) Tj T* (  First-class TypeScript integration with end-to-end typed routes and automated type-checking v) Tj T* (- **Nuxt 3 Score: 13.0 / 15.0:**) Tj T* (  Vite-powered Nuxt 3 provides fast HMR. Volar / TypeScript support for `.vue` single file comp) Tj T* (### Criterion 4: Component Architecture & Atomic Design Weight: 15%) Tj T* (- **Next.js 14 App Router Score: 14.5 / 15.0:**) Tj T* (  React's pure component model matches Brad Frost s Atomic Design seamlessly. Atoms `Button`, `) Tj T* (- **Nuxt 3 Score: 13.0 / 15.0:**) Tj T* (  Vue SFCs encapsulate templates, scripts, and scoped styles well, but Atomic component composi) Tj T* (### Criterion 5: Ecosystem Maturity & Longevity Weight: 15%) Tj T* (- **Next.js 14 App Router Score: 14.0 / 15.0:**) Tj T* ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000222 00000 n 
+0000000299 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+4039
+%%EOF

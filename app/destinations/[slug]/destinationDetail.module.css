@@ -1,0 +1,239 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbSection {
+  padding: 1.5rem 0;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-clay);
+}
+
+.heroSection {
+  padding: 3.5rem 0 4rem;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroHeader {
+  max-width: 800px;
+  margin-bottom: 2.5rem;
+}
+
+.metaRow {
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  margin-bottom: 0.75rem;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.imageWrapper {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card);
+}
+
+.imageCaption {
+  padding: 0.75rem 0.25rem 0.25rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-xs);
+  color: var(--color-charcoal-muted);
+  font-style: italic;
+}
+
+.contentSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 960px) {
+  .contentGrid {
+    grid-template-columns: 1fr 340px;
+    gap: 4.5rem;
+  }
+}
+
+.mainNarrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionKicker {
+  margin-bottom: 0.5rem;
+}
+
+.narrativeTitle {
+  margin-bottom: 1.5rem;
+}
+
+.bodyText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: var(--color-charcoal);
+}
+
+.highlightsContainer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.highlightsTitle {
+  margin-bottom: 1.5rem;
+}
+
+.highlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlightItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.highlightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-clay-light);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.highlightHeading {
+  font-family: var(--font-body-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+.highlightDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-charcoal-muted);
+  line-height: 1.6;
+}
+
+/* Aside Info Card */
+.infoAside {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoCard {
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 2rem 1.75rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.infoCardTitle {
+  font-family: var(--font-editorial-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.infoGroup {
+  margin-bottom: 1.25rem;
+}
+
+.infoLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-charcoal-muted);
+  margin-bottom: 0.375rem;
+}
+
+.infoValue {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.5;
+}
+
+.asideCta {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Related Section */
+.relatedSection {
+  padding: 5rem 0 6rem;
+  background-color: var(--color-bg-main);
+}
+
+.relatedHeader {
+  margin-bottom: 2.5rem;
+}
+
+.relatedTitle {
+  margin-top: 0.5rem;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

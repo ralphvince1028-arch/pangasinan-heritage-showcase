@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="mb-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="70%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#mb-sky)"/>
+  <rect y="420" width="1200" height="255" fill="#E2E8F0"/>
+  <rect y="440" width="1200" height="235" fill="#CBD5E1"/>
+
+  <!-- Basilica Center Structure -->
+  <!-- Main Hall Facade -->
+  <rect x="420" y="220" width="360" height="220" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Pediment Gable Triangle -->
+  <polygon points="400,220 600,100 800,220" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <circle cx="600" cy="165" r="28" fill="#F59E0B" stroke="#B45309" stroke-width="3"/>
+  <!-- Cross on Peak -->
+  <line x1="600" y1="60" x2="600" y2="100" stroke="#B45309" stroke-width="6"/>
+  <line x1="580" y1="75" x2="620" y2="75" stroke="#B45309" stroke-width="6"/>
+
+  <!-- Main Center Arch Portal -->
+  <path d="M 540,440 L 540,300 C 540,260 660,260 660,300 L 660,440 Z" fill="#78350F"/>
+  <path d="M 550,440 L 550,310 C 550,280 650,280 650,310 L 650,440 Z" fill="#451A03"/>
+
+  <!-- Left Belfry Tower -->
+  <rect x="280" y="160" width="140" height="280" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="270,160 350,70 430,160" fill="#DC2626"/>
+  <rect x="325" y="200" width="50" height="80" rx="25" fill="#334155"/>
+  <circle cx="350" cy="235" r="14" fill="#F59E0B"/>
+  <line x1="350" y1="50" x2="350" y2="70" stroke="#B45309" stroke-width="4"/>
+  <line x1="340" y1="58" x2="360" y2="58" stroke="#B45309" stroke-width="4"/>
+
+  <!-- Right Belfry Tower -->
+  <rect x="780" y="160" width="140" height="280" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="770,160 850,70 930,160" fill="#DC2626"/>
+  <rect x="825" y="200" width="50" height="80" rx="25" fill="#334155"/>
+  <circle cx="850" cy="235" r="14" fill="#F59E0B"/>
+  <line x1="850" y1="50" x2="850" y2="70" stroke="#B45309" stroke-width="4"/>
+  <line x1="840" y1="58" x2="860" y2="58" stroke="#B45309" stroke-width="4"/>
+
+  <!-- Flanking Garden Greenery -->
+  <circle cx="180" cy="420" r="80" fill="#15803D"/>
+  <circle cx="1020" cy="420" r="80" fill="#15803D"/>
+</svg>
+

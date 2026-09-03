@@ -1,0 +1,115 @@
+﻿.heroSection {
+  padding: 3.5rem 0 4.5rem;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 42% 58%;
+    gap: 4rem;
+  }
+}
+
+.narrativeCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrowWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-clay);
+}
+
+.headline {
+  margin-bottom: 1.25rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 480px) {
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+}
+
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.secondaryLink:hover {
+  color: var(--color-clay);
+}
+
+.secondaryLink:hover span:last-child {
+  transform: translateX(3px);
+}
+
+.visualCol {
+  width: 100%;
+}
+
+.imageFrame {
+  position: relative;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card);
+}
+
+.imageCaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0.25rem 0.25rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-xs);
+  color: var(--color-charcoal-muted);
+}
+
+.captionLocation {
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+}
+
+.captionSub {
+  font-style: italic;
+}

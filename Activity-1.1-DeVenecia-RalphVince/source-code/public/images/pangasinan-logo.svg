@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F4C81"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="36" fill="url(#logo-grad)"/>
+  <!-- Sun / Solar Ray -->
+  <circle cx="80" cy="52" r="18" fill="#F59E0B"/>
+  <circle cx="80" cy="52" r="23" stroke="#FEF08A" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+  <!-- Stylized Islets & Waves (Pangasinan heritage symbol) -->
+  <path d="M 32,108 C 45,90 60,90 72,108 C 82,96 98,96 108,108 C 118,92 134,92 144,108" fill="none" stroke="#FEF3C7" stroke-width="4" stroke-linecap="round"/>
+  <!-- Lingayen Gulf Wave Base -->
+  <path d="M 24,124 C 50,116 75,126 100,118 C 125,110 140,122 150,120" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/>
+  <!-- Lighthouse Beacon Silhouette -->
+  <polygon points="76,75 84,75 87,105 73,105" fill="#FFFFFF"/>
+  <rect x="74" y="70" width="12" height="5" rx="1" fill="#DC2626"/>
+</svg>
+

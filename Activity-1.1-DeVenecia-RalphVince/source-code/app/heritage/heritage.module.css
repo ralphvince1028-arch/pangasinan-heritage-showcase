@@ -1,0 +1,141 @@
+﻿.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  padding: 4.5rem 0 3.5rem;
+  background-color: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroContent {
+  max-width: 760px;
+}
+
+.eyebrowWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-clay);
+}
+
+.heroTitle {
+  margin-bottom: 1.25rem;
+}
+
+.heroLead {
+  line-height: 1.7;
+}
+
+.storySection {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bgAlt {
+  background-color: var(--color-bg-surface);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+  }
+
+  .reversed {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+  }
+
+  .reversed > * {
+    direction: ltr;
+  }
+}
+
+.storyTextCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionKicker {
+  margin-bottom: 0.5rem;
+}
+
+.storyTitle {
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.storyParagraph {
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.storyAction {
+  margin-top: 0.75rem;
+}
+
+.storyImageCol {
+  width: 100%;
+}
+
+.imageCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.625rem;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card);
+}
+
+.cardCaption {
+  padding: 0.5rem 0.25rem 0.25rem;
+  font-family: var(--font-body-sans);
+  font-size: var(--font-size-xs);
+  color: var(--color-charcoal-muted);
+  font-style: italic;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 5.5rem 0 6.5rem;
+  background-color: var(--color-bg-main);
+}
+
+.ctaCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-card);
+}
+
+.ctaEyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.ctaTitle {
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Atomic Design System Manual</title>
+  <style>
+    body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; line-height: 1.65; color: #202322; background: #FBF8F1; max-width: 880px; margin: 40px auto; padding: 0 24px; }
+    h1 { color: #182A35; font-family: 'Georgia', serif; border-bottom: 2px solid #B85C3D; padding-bottom: 12px; margin-top: 0; }
+    h2 { color: #182A35; font-family: 'Georgia', serif; border-bottom: 1px solid #E2D7C3; padding-bottom: 6px; margin-top: 36px; }
+    h3 { color: #B85C3D; margin-top: 24px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #FFF; }
+    th, td { border: 1px solid #E2D7C3; padding: 10px 14px; text-align: left; }
+    th { background: #182A35; color: #FBF8F1; font-weight: 600; }
+    code { background: #E8DDCA; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+    pre { background: #182A35; color: #FBF8F1; padding: 16px; border-radius: 6px; overflow-x: auto; }
+    pre code { background: none; color: inherit; padding: 0; }
+    hr { border: none; border-top: 1px solid #E2D7C3; margin: 30px 0; }
+    strong { color: #182A35; }
+    @media print { body { background: #FFF; margin: 0; max-width: 100%; } }
+  </style>
+</head>
+<body>
+  ﻿# Atomic Design System Manual: Pangasinan Heritage Digital Showcase
+<strong>Course / Subject:</strong> Elective 4 – Special Topics in IT  
+<strong>Student:</strong> Ralph Vince De Venecia  
+<strong>Methodology:</strong> Brad Frost’s Atomic Design (Atoms, Molecules, Organisms, Sections)  
+<strong>Visual Identity:</strong> Contemporary Coastal Heritage Editorial  
+<strong>Color Scheme:</strong> Deep Navy (<code>#182A35</code>), Warm Sand (<code>#F3EBDD</code>), Burnt Clay (<code>#B85C3D</code>), Sea Glass (<code>#6F9C97</code>), Rice White (<code>#FBF8F1</code>), Charcoal (<code>#202322</code>)
+
+<hr/>
+
+<h2>1. System Overview & Hierarchy</h2>
+
+Brad Frost’s Atomic Design methodology establishes a modular component hierarchy that promotes reuse, encapsulation, and maintainability across the Pangasinan Heritage digital ecosystem:
+
+``<code>
+Atoms (Tokens, Button, Typography, Icon, ResponsiveImage)
+  └── Molecules (HeritageCard, SearchForm, NavigationItem)
+        └── Organisms (HeaderNavigation, HeritageGrid, Footer)
+              └── Templates & Sections (HomeHero, FeaturedStory, HeritageFeature, ExperienceStrip)
+                    └── Pages (Home, Destinations Directory, Destination Details, Heritage & Culture)
+</code>`<code>
+
+<hr/>
+
+<h2>2. Atoms</h2>
+
+<h3>2.1. Design Tokens (</code>styles/tokens.css<code>)</h3>
+- <strong>Usage Context:</strong> Defines centralized CSS Custom Properties for colors, typography, spacing, border-radii, and shadows.
+- <strong>Responsive Logic:</strong> Adapts </code>--container-padding<code> from </code>1.5rem<code> on mobile to </code>2.5rem<code> on tablet/desktop.
+- <strong>Code Reference:</strong>
+</code>`<code>css
+:root {
+  --color-navy: #182A35;
+  --color-sand: #F3EBDD;
+  --color-clay: #B85C3D;
+  --color-seaglass: #6F9C97;
+  --color-rice-white: #FBF8F1;
+  --color-charcoal: #202322;
+  --font-editorial-serif: 'Playfair Display', Georgia, serif;
+  --font-body-sans: 'Plus Jakarta Sans', Inter, sans-serif;
+}
+</code>`<code>
+
+<hr/>
+
+<h3>2.2. Button Atom (</code>components/atoms/Button<code>)</h3>
+- <strong>Visual Preview:</strong> Rectangular button with Burnt Clay background (</code>primary<code>), Navy border (</code>outline<code>), or editorial link with sliding arrow (</code>editorial-link<code>).
+- <strong>Usage Context:</strong> Triggers actions or navigates to destination pages throughout the showcase.
+- <strong>Responsive Logic:</strong> Scales font size and padding across </code>sm<code>, </code>md<code>, </code>lg<code>. Supports </code>fullWidth<code> for mobile dialogs and aside CTAs.
+- <strong>Code Reference:</strong>
+</code>`<code>tsx
+export const Button: React.FC<ButtonProps> = ({
+  variant = 'primary',
+  size = 'md',
+  href,
+  children,
+  iconRight,
+}) => {
+  const combined = </code>${styles.button} ${styles[variant]} ${styles[size]}<code>;
+  if (href) return <Link href={href} className={combined}>{children}{iconRight}</Link>;
+  return <button className={combined}>{children}{iconRight}</button>;
+};
+</code>`<code>
+
+<hr/>
+
+<h3>2.3. Typography Atom (</code>components/atoms/Typography<code>)</h3>
+- <strong>Visual Preview:</strong> High-contrast editorial serif headings and crisp sans-serif body copy with proportional line heights.
+- <strong>Usage Context:</strong> Standardizes all typographic elements across the application (</code>display<code>, </code>h1<code>, </code>h2<code>, </code>h3<code>, </code>lead<code>, </code>body<code>, </code>eyebrow<code>, </code>caption<code>).
+- <strong>Responsive Logic:</strong> Uses CSS </code>clamp()<code> fluid typography (e.g., </code>clamp(1.85rem, 4vw, 3.25rem)<code> for </code>h1<code>).
+- <strong>Code Reference:</strong>
+</code>`<code>tsx
+export const Typography: React.FC<TypographyProps> = ({
+  variant = 'body',
+  color = 'default',
+  as,
+  children,
+}) => {
+  const Component = as || defaultTagMap[variant];
+  return <Component className={</code>${styles[variant]} ${styles[<code>color-${color}</code>]}<code>}>{children}</Component>;
+};
+</code>`<code>
+
+<hr/>
+
+<h3>2.4. Icon Atom (</code>components/atoms/Icon<code>)</h3>
+- <strong>Visual Preview:</strong> Crisp inline SVG icons (compass, map-pin, arrow-right, search, landmark, waves, sun, calendar).
+- <strong>Usage Context:</strong> Provides visual anchors for navigation, metadata labels, and interactive search controls.
+- <strong>Responsive Logic:</strong> Fixed pixel bounding boxes (</code>xs: 14px<code>, </code>sm: 16px<code>, </code>md: 20px<code>, </code>lg: 24px<code>, </code>xl: 32px<code>) preventing layout shifting.
+- <strong>Code Reference:</strong>
+</code>`<code>tsx
+export const Icon: React.FC<IconProps> = ({ name, size = 'md', color = 'currentColor' }) => (
+  <span className={styles.icon} style={{ width: sizeMap[size], height: sizeMap[size] }}>
+    <svg viewBox="0 0 24 24">{renderPath(name, color)}</svg>
+  </span>
+);
+</code>`<code>
+
+<hr/>
+
+<h3>2.5. ResponsiveImage Atom (</code>components/atoms/ResponsiveImage<code>)</h3>
+- <strong>Visual Preview:</strong> Photographic container with aspect-ratio enforcement (</code>16/9<code>, </code>4/3<code>, </code>3/2<code>, </code>1/1<code>), subtle zoom-on-hover, and base-path awareness.
+- <strong>Usage Context:</strong> Renders all local destination photographs and hero banners.
+- <strong>Responsive Logic:</strong> Next.js </code>fill<code> mode inside a responsive aspect-ratio container with </code>sizes<code> query to serve optimized dimensions on mobile vs desktop.
+- <strong>Code Reference:</strong>
+</code>`<code>tsx
+export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ src, alt, aspectRatio = '16/9', priority }) => {
+  const resolved = assetPath(src);
+  return (
+    <div className={</code>${styles.wrapper} ${aspectClassMap[aspectRatio]}<code>}>
+      <Image src={resolved} alt={alt} fill priority={priority} className={styles.image} />
+    </div>
+  );
+};
+</code>`<code>
+
+<hr/>
+
+<h2>3. Molecules</h2>
+
+<h3>3.1. HeritageCard Molecule (</code>components/molecules/HeritageCard<code>)</h3>
+- <strong>Visual Preview:</strong> Image-forward editorial card featuring a rectangular photo, category/municipality kicker, bold serif title, short narrative, and "Explore Destination &rarr;" link.
+- <strong>Usage Context:</strong> Displayed in the Homepage Discovery Strip, Destinations Directory, and Related Destinations section.
+- <strong>Responsive Logic:</strong> Stacks neatly in single-column mobile viewports and spans 2-column (tablet) or 3-column (desktop) grids.
+
+<hr/>
+
+<h3>3.2. SearchForm Molecule (</code>components/molecules/SearchForm<code>)</h3>
+- <strong>Visual Preview:</strong> Editorial search bar with search icon, placeholder text, and clear button (</code>&times;<code>).
+- <strong>Usage Context:</strong> Primary interactive filter on </code>/destinations<code> enabling real-time search across destination names, municipalities, and categories.
+- <strong>Responsive Logic:</strong> Expands to 100% of container width with touch-friendly 44px minimum tap targets.
+
+<hr/>
+
+<h3>3.3. NavigationItem Molecule (</code>components/molecules/NavigationItem<code>)</h3>
+- <strong>Visual Preview:</strong> Clean text link with an animated bottom accent underline indicating the active route.
+- <strong>Usage Context:</strong> Used in desktop and mobile header navigation bars.
+- <strong>Responsive Logic:</strong> Horizontal inline presentation on desktop; full-width stacked row on mobile drawer.
+
+<hr/>
+
+<h2>4. Organisms</h2>
+
+<h3>4.1. HeaderNavigation Organism (</code>components/organisms/HeaderNavigation<code>)</h3>
+- <strong>Visual Preview:</strong> Sticky header with "PANGASINAN" wordmark, navigation links (Home, Destinations, Heritage & Culture), Explore CTA button, and accessible mobile menu drawer.
+- <strong>Usage Context:</strong> Global header persistent across all pages.
+- <strong>Responsive Logic:</strong> Replaces desktop nav links with an accessible hamburger button on viewports </code>< 768px<code>.
+
+<hr/>
+
+<h3>4.2. HeritageGrid Organism (</code>components/organisms/HeritageGrid<code>)</h3>
+- <strong>Visual Preview:</strong> Dynamic grid of </code>HeritageCard<code> molecules with an interactive Empty State ("No destinations match your search.") and reset button.
+- <strong>Usage Context:</strong> Powers destination directory browsing on </code>/destinations<code>.
+- <strong>Responsive Logic:</strong> </code>grid-template-columns: 1fr<code> (Mobile) &rarr; </code>repeat(2, 1fr)<code> (Tablet) &rarr; </code>repeat(3, 1fr)<code> (Desktop).
+
+<hr/>
+
+<h3>4.3. Footer Organism (</code>components/organisms/Footer<code>)</h3>
+- <strong>Visual Preview:</strong> Deep Navy footer with provincial tourism summary, quick navigation, featured municipalities directory, and copyright bar.
+- <strong>Usage Context:</strong> Global footer persistent across all pages.
+- <strong>Responsive Logic:</strong> Stacks columns vertically on mobile; spreads across a 3-column grid on viewports </code>&ge; 768px`.
+</body>
+</html>
