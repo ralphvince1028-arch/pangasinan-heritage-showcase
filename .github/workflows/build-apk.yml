@@ -8,9 +8,12 @@ on:
       - 'mobile/**'
       - '.github/workflows/build-apk.yml'
 
+permissions:
+  contents: write
+
 jobs:
   build:
-    name: Build APK
+    name: Build Standalone APK
     runs-on: ubuntu-latest
 
     steps:
@@ -43,16 +46,17 @@ jobs:
           cd mobile
           npx expo prebuild --platform android --no-install
 
-      - name: Build Android APK
+      - name: Build Android Release APK (Standalone Offline)
         run: |
           cd mobile/android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleRelease --no-daemon
 
-      - name: Rename APK for release
+      - name: Copy and rename APK
         run: |
           mkdir -p output
-          find mobile/android/app/build/outputs/apk -name "*.apk" -exec cp {} output/pangasinan-heritage.apk \;
+          find mobile/android/app/build/outputs/apk/release -name "*.apk" -exec cp {} output/pangasinan-heritage.apk \;
+          ls -lh output/
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
@@ -60,3 +64,26 @@ jobs:
           name: pangasinan-heritage-apk
           path: output/pangasinan-heritage.apk
           if-no-files-found: error
+
+      - name: Publish Direct APK Download Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: apk-latest
+          name: "Pangasinan Heritage Mobile APK (Direct Download)"
+          body: |
+            ### ?? Standalone Pangasinan Heritage Android APK
+            
+            This is a standalone offline release build of the Pangasinan Heritage mobile companion app.
+            
+            **Direct Download:**
+            ?? Click **`pangasinan-heritage.apk`** below to download directly to your Android device.
+            
+            **Installation Instructions:**
+            1. Download `pangasinan-heritage.apk` on your Android phone.
+            2. Tap the downloaded file in your browser or Notifications.
+            3. Tap **Install** (allow "Install unknown apps" if prompted).
+            4. Launch and enjoy exploring Pangasinan!
+          files: output/pangasinan-heritage.apk
+          prerelease: false
+          make_latest: true
