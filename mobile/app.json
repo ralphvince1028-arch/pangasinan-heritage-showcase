@@ -9,6 +9,7 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
+      "image": "./assets/splash.png",
       "backgroundColor": "#182A35",
       "resizeMode": "contain"
     },
@@ -17,13 +18,15 @@
       "bundleIdentifier": "com.pangasinan.heritage"
     },
     "android": {
+      "package": "com.pangasinan.heritage",
+      "versionCode": 1,
       "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#182A35"
       },
-      "package": "com.pangasinan.heritage"
-    },
-    "web": {
-      "bundler": "metro"
+      "permissions": [
+        "INTERNET"
+      ]
     },
     "plugins": [
       "expo-router",
