@@ -1,4 +1,4 @@
-﻿{
+{
   "expo": {
     "name": "Pangasinan Heritage",
     "slug": "pangasinan-heritage-mobile",
@@ -26,7 +26,9 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-asset",
+      "expo-font"
     ]
   }
 }

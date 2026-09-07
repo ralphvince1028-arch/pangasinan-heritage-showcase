@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface FavoritesContextType {
@@ -18,10 +18,6 @@ const STORAGE_KEY = '@pangasinan_favorites';
 export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [favorites, setFavorites] = useState<string[]>([]);
 
-  useEffect(() => {
-    loadFavorites();
-  }, []);
-
   const loadFavorites = async () => {
     try {
       const stored = await AsyncStorage.getItem(STORAGE_KEY);
@@ -32,6 +28,10 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       console.warn('Failed to load favorites', e);
     }
   };
+
+  useEffect(() => {
+    loadFavorites();
+  }, []);
 
   const isFavorite = (slug: string) => favorites.includes(slug);
 
